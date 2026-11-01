@@ -1,0 +1,10 @@
+# Python packages for the data pipeline (tested with Python 3.11, pandas 3.0, numpy 2.4)
+pandas>=2.0
+numpy>=1.24
+tzdata            # time zone data for the SEV local time -> UTC conversion (needed on Windows)
+matplotlib>=3.7   # only for model_v4/make_figures_v4.py
+
+# Only needed to re-download the Copernicus C3S wind/solar data (data/raw/c3s/download_c3s.py):
+# cdsapi
+# xarray
+# netCDF4

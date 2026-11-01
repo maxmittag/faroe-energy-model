@@ -1,0 +1,10 @@
+case,ntc_MW_today,cost_MEUR_today_as_given_450km,cost_MEUR_today,note,demand_GWh_today,peak_MW_today
+base_no_cable,0.0,16.87207687205955,16.87207687205955,,487.8,78.1
+is_fixed_25,25.0,3.782055402392877,3.782055402392877,,487.8,78.1
+is_fixed_50,50.0,5.768152433772845,5.768152433772845,,487.8,78.1
+is_fixed_100,100.0,10.76915835926136,10.76915835926136,,487.8,78.1
+is_variable_cap1000,24.675639106623223,3.7795272883760433,3.7795272883760433,,487.8,78.1
+gb_fixed_25,25.0,-4.760588066915001,-5.095782665608293,"Scotland: given at 450 km, converted to 400 km (exact for fixed size)",487.8,78.1
+gb_fixed_50,50.0,-16.214996059563454,-16.885385256950038,"Scotland: given at 450 km, converted to 400 km (exact for fixed size)",487.8,78.1
+gb_fixed_100,100.0,-38.31249795701586,-39.653276351789025,"Scotland: given at 450 km, converted to 400 km (exact for fixed size)",487.8,78.1
+gb_variable_cap500,500.0,-212.46207566669275,-219.1659676405586,"Scotland: given at 450 km, converted to 400 km (exact for fixed size)",487.8,78.1

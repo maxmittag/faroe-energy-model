@@ -1,0 +1,2 @@
+input_hourly_gb_2030.csv cap 500.0: OPTIMAL cost 15.1458 MEUR, ntc 31.18 MW, wind +30.72, bat 154.2 MWh, export max 0.0, 86.0 s
+input_hourly_gb_2030.csv cap 1000.0: OPTIMAL cost 15.1458 MEUR, ntc 31.18 MW, wind +30.72, bat 154.2 MWh, export max 0.0, 65.0 s

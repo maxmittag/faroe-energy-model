@@ -1,0 +1,1 @@
+input_hourly_gb.csv km 400.0: OPTIMAL cost -5.096 MEUR, wind +51.2, demand 487.8 GWh

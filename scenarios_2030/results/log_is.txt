@@ -1,0 +1,7 @@
+tag is, input input_hourly_2030.csv, cable_km 450.0, ann_x 167568.0 EUR/MW/yr, demand 578.5 GWh, peak 92.6 MW
+base_no_cable: 24.77 MEUR, ntc 0.0 (cap hit: false), wind +89.6, pv +72.3, bat +46.0 MW / 1051.7 MWh, import 0.0 GWh, export 0.0 GWh, balance err 4.263256414560601e-14, oil max 0.0, 74.3 s
+is_fixed_25: 8.86 MEUR, ntc 25.0 (cap hit: false), wind +38.5, pv +0.0, bat +20.4 MW / 360.2 MWh, import 56.2 GWh, export 141.7 GWh, balance err 4.263256414560601e-14, oil max 0.0, 67.6 s
+is_fixed_50: 7.55 MEUR, ntc 50.0 (cap hit: false), wind +48.8, pv +0.0, bat +-0.0 MW / 0.0 MWh, import 87.2 GWh, export 244.3 GWh, balance err 4.263256414560601e-14, oil max 0.0, 77.2 s
+is_fixed_100: 12.53 MEUR, ntc 100.0 (cap hit: false), wind +99.6, pv +0.0, bat +-0.0 MW / 0.0 MWh, import 71.2 GWh, export 512.5 GWh, balance err 7.105427357601002e-14, oil max 0.0, 83.3 s
+is_variable_cap1000: 6.57 MEUR, ntc 34.3 (cap hit: false), wind +35.0, pv +0.0, bat +6.0 MW / 68.1 MWh, import 83.7 GWh, export 164.8 GWh, balance err 4.263256414560601e-14, oil max 0.0, 113.7 s
+written results/summary_is.csv

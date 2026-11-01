@@ -1,0 +1,13 @@
+hours with GB price < 0: 181, mean price in them -12.3
+gb_fixed_100: ntc 100.0 cost 24.664 MEUR, export max 0.0
+  import total 80.34 GWh, of which at price < 0: 14.79 GWh (18.4 %); payment received for it 0.19 MEUR
+  curtailment total 62.44 GWh, of which in price < 0 hours: 11.44 GWh
+  hours with import AND curtailment: 180, of which price <= 0: 180; import in such hours with price > 0: 0.0 GWh
+  hours with import > demand: 413
+  import-weighted price, price >= 0 hours only: 100.2 EUR/MWh
+gb_variable_cap500: ntc 31.2 cost 15.146 MEUR, export max 0.0
+  import total 60.59 GWh, of which at price < 0: 5.64 GWh (9.3 %); payment received for it 0.07 MEUR
+  curtailment total 98.0 GWh, of which in price < 0 hours: 7.13 GWh
+  hours with import AND curtailment: 148, of which price <= 0: 148; import in such hours with price > 0: 0.0 GWh
+  hours with import > demand: 0
+  import-weighted price, price >= 0 hours only: 111.67 EUR/MWh

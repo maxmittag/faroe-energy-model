@@ -1,0 +1,7 @@
+technology,dispatchable,can_invest,vc,lifetime,investment_generation,investment_storage,fom,g_max,d_max,l_max,storage_efficiency_in,storage_efficiency_out,source
+wind,0,1,0,30,1036000,-1,12600,61.55,-1,-1,-1,-1,DEA el/DH catalogue sheet 20 onshore 2030; existing = farms in the SEV feed (Neshagi 4.65 + Husahagi 11.7 + Gellingaklettur 25.2 + Flatnahagi 18 + Vestmanna 2; SEV plant list)
+pv,0,1,0,30,1110000,-1,7000,0,-1,-1,-1,-1,Trondheim et al. 2021 (HMT) Table 5 Faroe PV 2030; no PV in the main grid today
+oil,1,0,0,-1,-1,-1,0,86.1,-1,-1,-1,-1,SEV plant list (Sund 82.5 + Strond 3.6); not allowed to run
+hydro,1,0,0,-1,-1,-1,0,37.3,-1,5850,-1,-1,SEV plant list; reservoir 50 % of 11.7 GWh (Ea Energy Analyses 2018 Table 3)
+battery,1,1,1,25,170000,151000,574,12,12,12.5,0.959166,0.959166,DEA storage catalogue sheet 180 Li-ion 2030; existing Sund 12 MW / 12.5 MWh
+phs,1,1,1,50,4250000,-1,8507,0,0,0,0.866025,0.866025,DEA storage catalogue sheet 160 pumped hydro; site Myruverkid II (SEV)

@@ -1,0 +1,5 @@
+cost 11.0553 MEUR; new wind 0.0
+annual cost of 1 MW wind: 79993.0 EUR; marginal value from duals: 59638.0 EUR; reduced cost CAP_G[wind]: 20355.0
+wind-weighted dual 10.65 EUR/MWh, mean dual 16.62, import-weighted price 22.73
+hours with import > 0: 4182; mean ava_wind in import hours 0.34, in other hours 0.913
+forced +10 MW wind: OPTIMAL cost 11.4335 MEUR (delta 0.3782), curtailment 26.6 GWh vs 4.7

@@ -1,0 +1,7 @@
+tag is, demand case today, input input_hourly.csv, NO_EXPORT true, cable_km 450.0, ann_x 167568.0 EUR/MW/yr, demand 487.8 GWh, peak 78.1 MW
+base_no_cable: 16.87 MEUR, ntc 0.0 (cap hit: false), wind +51.7, pv +64.9, bat +26.4 MW / 676.6 MWh, import 0.0 GWh, export max 0.0 MW, curtail 45.5 %, balance err 4.263256414560601e-14, oil max 0.0, 62.1 s
+is_fixed_25: 6.25 MEUR, ntc 25.0 (cap hit: false), wind +1.1, pv +0.0, bat +1.2 MW / 42.1 MWh, import 54.2 GWh, export max 0.0 MW, curtail 8.0 %, balance err 2.842170943040401e-14, oil max 0.0, 87.8 s
+is_fixed_50: 9.85 MEUR, ntc 50.0 (cap hit: false), wind +0.0, pv +0.0, bat +-0.0 MW / 0.0 MWh, import 59.2 GWh, export max 0.0 MW, curtail 7.8 %, balance err 1.4210854715202004e-14, oil max 0.0, 68.2 s
+is_fixed_100: 18.23 MEUR, ntc 100.0 (cap hit: false), wind +0.0, pv +0.0, bat +-0.0 MW / 0.0 MWh, import 59.2 GWh, export max 0.0 MW, curtail 7.8 %, balance err 1.4210854715202004e-14, oil max 0.0, 71.0 s
+is_variable_cap1000: 6.21 MEUR, ntc 25.2 (cap hit: false), wind +0.0, pv +0.0, bat +0.9 MW / 40.2 MWh, import 55.2 GWh, export max 0.0 MW, curtail 6.6 %, balance err 1.4210854715202004e-14, oil max 0.0, 58.9 s
+written scenarios_2030\results_import_only\summary_is_today.csv

@@ -1,0 +1,63 @@
+model year 2025-10-01 00:00:00 .. 2026-09-30 23:00:00 UTC, 8760 hours
+SEV rows 896184; exact duplicate rows dropped: 108957; remaining rows 787227 -> 531024 (hour, plant) values after summing partial records; rows per (hour, plant): {1: 309483, 2: 186893, 3: 34640, 4: 5, 6: 3} (> 3 rows only at local hours ['2023-10-29 01:00:00', '2024-10-27 01:00:00', '2025-10-26 01:00:00'], the repeated autumn hour); (hour, plant) keys split over two chunks: 0
+DST: local rows in the window 8759; autumn change 26.10.2025 (local 01:00 twice) -> ambiguous hour dropped; spring change 29.03.2026 (local 01:00 does not exist) -> no gap in UTC
+SEV main grid: missing UTC hours filled by interpolation: 2 ['2025-10-26 00:00:00', '2025-10-26 01:00:00']; hours with load < 25 MW interpolated: 0; Sumba missing hours interpolated: 2
+
+=== SEV cleaning: before (first row per hour and plant kept) vs after (exact duplicates dropped, partial records summed), GWh ===
+model year, main grid (UTC, as used in the model):
+                before   after   diff
+Biogas            9.92    9.92   0.00
+Oil             217.69  221.03   3.35
+Water           111.28  111.28   0.00
+Wind            130.85  145.52  14.67
+load            469.73  487.75  18.02
+Sumba PV (MWh)  185.23  185.23   0.00
+model year per plant (local time, all plants; Suðuroy plants not in the model):
+                before    after  max_h_after_MWh    diff
+powerplant                                              
+Botnur           3.540    3.540            3.400   0.000
+Eiði            60.634   60.635           20.968   0.001
+Fossá           25.400   25.403            8.037   0.003
+Førka            9.916    9.917            1.501   0.001
+Heygar          13.874   13.874            4.753   0.000
+Mýrarnar        10.249   10.249            2.328   0.000
+Neshagi          0.298   12.913            4.236  12.615
+Norðstreymoy     4.266    4.266            1.888   0.000
+Strond           1.112    1.112            2.547   0.000
+Strond Vatn      0.000    3.350            1.350   3.350
+Sumba            0.185    0.185            0.198   0.000
+Sund           215.623  215.641           61.564   0.018
+Suðuroy          1.582   17.176            5.766  15.593
+Suðurstreymoy  126.267  128.325           42.278   2.058
+Sørvágur         2.041    2.041            1.701   0.000
+Vágur           18.295   18.296            7.881   0.002
+calendar year 2024 before: all plants 462.0 GWh (SEV annual accounts 2024: 271 GWh renewable = 56.6 % -> about 479 GWh), main grid 441.7, main-grid wind 132.8 GWh
+calendar year 2024 after: all plants 486.0 GWh (SEV annual accounts 2024: 271 GWh renewable = 56.6 % -> about 479 GWh), main grid 448.6, main-grid wind 138.0 GWh
+Elma: rows in file 14016 (2025-03-12 00:00:00 .. 2026-10-16 23:00:00), missing prices in the whole file 27; missing in the model year (interpolated): 1 ['2025-12-10 03:00:00']
+
+=== yearly sums (model year) ===
+demand             487.8 GWh   peak 78.1 MW   min 35.6 MW
+  of which oil     221.0 GWh (45%)  hydro 111.3  wind 145.5  biogas 9.9 GWh
+wind            CF 0.270  (2364 full-load h)  max ava 0.762
+PV (Sumba)      185.2 MWh -> 772 full-load h at 0.24 MW (at 0.25 MW: 741 h; literature for the Faroes 584-620 h)  max ava 0.826  hours clipped at 1: 0
+hydro inflow       111.3 GWh (= SEV hydro production)
+biogas               9.9 GWh   max 1.50 MW
+Elma price      mean 26.5  min 0.01  max 488.1 EUR/MWh  P5/P25/P50/P75/P95 [2.1, 9.1, 23.7, 40.8, 49.5]  hours <= 0: 0
+demand-weighted Elma price 27.6; wind-weighted 26.8; PV-weighted 39.4 EUR/MWh
+
+=== monthly (GWh; PV in MWh; price EUR/MWh) ===
+         demand   oil  hydro  wind  pv_MWh    pi
+2025-10    41.2  15.3   12.8  12.4     6.1  28.6
+2025-11    42.1  22.2    9.0  10.3     2.4  23.2
+2025-12    42.6  14.7   13.4  13.8     0.9  10.1
+2026-01    45.7  19.2    8.9  17.0     1.3  20.2
+2026-02    41.1  18.3   10.2  11.9     5.3  20.8
+2026-03    41.8   7.3   15.3  18.3    13.5  22.0
+2026-04    40.2  17.8    9.8  11.6    22.5  21.6
+2026-05    40.9  26.3    5.5   8.3    29.3  19.0
+2026-06    36.9  23.6    3.2   9.1    32.4  36.9
+2026-07    37.4  23.9    3.5   9.0    32.0  47.2
+2026-08    38.3  21.5    7.5   8.4    23.2  29.2
+2026-09    39.5  11.0   12.2  15.5    16.3  39.6
+
+calmest summer week (lowest 7-day mean ava_wind, Jun-Aug 2026): 2026-07-13 10:00:00 .. 2026-07-20 09:00:00 UTC, mean ava_wind 0.045
