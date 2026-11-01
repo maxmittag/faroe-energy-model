@@ -11,7 +11,7 @@ Runs: `run_2030.jl` (two Julia processes, one per counterpart), merged by `make_
 | Only demand changed | all other columns identical | pandas: wind/PV availability, hydro inflow, biogas, price columns identical | yes |
 | Demand 2030 | 1.186 x 487.8 = 578.5 GWh | 578.47 GWh, peak 92.6 MW (today 78.1 MW) | yes |
 | Cable length Iceland | 450 km (model default) | 450 km, ann_x 167,568 EUR/MW/yr | yes |
-| Cable length Scotland | sourced number | 400 km, NAEN (2016) *North Atlantic Energy Network*, p. 9 table "Faroese - Scotland 400 km" (same table: Iceland - Faroes 450 km); also p. 45 Table 1. PDF in `sources/`. ann_x 154,160 EUR/MW/yr | yes |
+| Cable length Scotland | sourced number | 400 km, NAEN (2016) *North Atlantic Energy Network*, p. 9 table "Faroese - Scotland 400 km" (same table: Iceland - Faroes 450 km); also p. 45 Table 1. PDF: https://vatnsidnadur.net/wp-content/uploads/2016/03/North-Atlantic-Energy-Network-Report.pdf ann_x 154,160 EUR/MW/yr | yes |
 | Model copy faithful | today's demand, Iceland 25 MW, 450 km = 3.78 (given) | `check_today_25.jl`: 3.782 M EUR, wind +14.1 MW (given 3.78, +14.1) | yes |
 
 ## Every run (`summary_2030.csv`, columns `check_*`)

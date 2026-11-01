@@ -34,7 +34,6 @@ Then compare `scenarios_2030/results_import_only/summary_is_2030.csv` with the t
 | `scenarios_2030/` | **current model and results**: `model_spike.jl`, `run_import_only.jl`, input files in `data/`, results in `results_import_only/`, checks in `CHECKS_import_only.md`, group deck `Faroe_2030_Scenarios_Group.pdf` |
 | `scenarios_2030/results/` | archived: the same runs with export allowed (before the group decision of 28.10.) |
 | `scenarios_2030/_archive_with_export/` | archived export runs, read by `make_summary_import_only.py` for the comparison column |
-| `scenarios_2030/sources/` | NAEN 2016 report (source for the cable lengths) |
 
 ## Pipeline
 
@@ -134,7 +133,7 @@ Extra cost per year compared with today, M EUR (`results_import_only/summary_203
 - **No oil** in any hour; demand must be met in every hour.
 - **Import only** (group decision 28.10.2026): the cable never exports (`NoExport[t]: F_FO_IS[t] == 0`).
 - **2030 demand** = today's hourly profile x 600/506 = **1.186** (578.5 GWh, peak 92.6 MW).
-- **Cable lengths**: Iceland **450 km**, Scotland **400 km** (NAEN 2016, p. 9 and Table 1 p. 45, in `sources/`).
+- **Cable lengths**: Iceland **450 km**, Scotland **400 km** (NAEN 2016, p. 9 and Table 1 p. 45, [PDF](https://vatnsidnadur.net/wp-content/uploads/2016/03/North-Atlantic-Energy-Network-Report.pdf)).
   Cable cost 3,220 EUR per MW and km plus 640,000 EUR per MW for the converters, 40 years, 5 % interest
   (DEA transport catalogue).
 - **Prices**: Iceland = Elma day-ahead price (ISK converted with the ECB daily rate). Scotland = Elexon
@@ -160,7 +159,7 @@ import only). All sanity checks of the current runs are in `scenarios_2030/CHECK
 | GB day-ahead price | Elexon BMRS, Market Index Data | BMRS Data Licence (free use with attribution to Elexon) |
 | Iceland day-ahead price | Elma, elma.is/en/market-data/day-ahead | public market data, no licence stated; cite Elma |
 | Exchange rates ISK/EUR, USD/EUR | European Central Bank, data-api.ecb.europa.eu | free reuse with source attribution |
-| Cable lengths | NAEN (2016) *North Atlantic Energy Network* | report, cite |
+| Cable lengths | NAEN (2016) *North Atlantic Energy Network*, [PDF](https://vatnsidnadur.net/wp-content/uploads/2016/03/North-Atlantic-Energy-Network-Report.pdf) | report, cite |
 | Technology costs | Danish Energy Agency technology catalogues, Tróndheim et al. 2021 | see `technologies.csv` |
 
 ## Reproducibility test (31.10.2026)

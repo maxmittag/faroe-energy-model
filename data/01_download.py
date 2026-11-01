@@ -12,7 +12,7 @@ RAW = pathlib.Path(__file__).parent / "raw"
 RAW.mkdir(parents=True, exist_ok=True)
 START = dt.date(2023, 1, 1)
 END = dt.date.today() - dt.timedelta(days=1)
-UA = {"User-Agent": "Mozilla/5.0 (CBS student project, max.mittag@gmail.com)"}
+UA = {"User-Agent": "Mozilla/5.0 (CBS student project)"}
 
 
 def get(url, tries=5, timeout=120):
