@@ -16,7 +16,9 @@ const TAG = get(ENV, "SPIKE_TAG", "is")
 const INPUT = get(ENV, "SPIKE_INPUT", "input_hourly.csv")
 const COUNTERPART = TAG == "is" ? "Iceland" : "Scotland"
 const DEMAND_CASE = get(ENV, "SPIKE_DEMAND_CASE", "2030")
-const OUTDIR = joinpath(@__DIR__, "results_import_only")
+
+# Read from ENV --> not specified uses the default.
+const OUTDIR = joinpath(@__DIR__, get(ENV, "SPIKE_OUTDIR", "results_import_only"))
 
 function report(label, m, solve_s; counterpart, case_type, ntc_fixed = NaN, cap = NaN)
     st = termination_status(m)

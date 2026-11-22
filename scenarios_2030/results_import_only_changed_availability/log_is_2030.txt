@@ -1,0 +1,7 @@
+tag is, demand case 2030, input input_hourly_2030.csv, NO_EXPORT true, cable_km 450.0, ann_x 167568.0 EUR/MW/yr, demand 578.5 GWh, peak 92.6 MW
+base_no_cable: 28.0 MEUR, ntc 0.0 (cap hit: false), wind +128.3, pv +73.5, bat +39.6 MW / 1062.1 MWh, import 0.0 GWh, export max 0.0 MW, curtail 45.5 %, balance err 1.1368683772161603e-13, oil max 0.0, 49.0 s
+is_fixed_25: 15.64 MEUR, ntc 25.0 (cap hit: false), wind +73.2, pv +3.6, bat +14.8 MW / 369.2 MWh, import 43.8 GWh, export max 0.0 MW, curtail 21.6 %, balance err 2.842170943040401e-14, oil max 0.0, 60.6 s
+is_fixed_50: 14.0 MEUR, ntc 50.0 (cap hit: false), wind +29.5, pv +0.0, bat +-0.0 MW / 0.0 MWh, import 149.6 GWh, export max 0.0 MW, curtail 0.8 %, balance err 2.842170943040401e-14, oil max 0.0, 62.1 s
+is_fixed_100: 22.31 MEUR, ntc 100.0 (cap hit: false), wind +28.6, pv +0.0, bat +-0.0 MW / 0.0 MWh, import 154.0 GWh, export max 0.0 MW, curtail 0.7 %, balance err 1.4210854715202004e-14, oil max 0.0, 133.0 s
+is_variable_cap1000: 12.44 MEUR, ntc 35.9 (cap hit: false), wind +35.4, pv +0.0, bat +4.1 MW / 70.6 MWh, import 120.5 GWh, export max 0.0 MW, curtail 1.4 %, balance err 2.842170943040401e-14, oil max 0.0, 142.2 s
+written C:\Users\Antonia Leuhusen\Desktop\Faroe Island Remote\faroe-energy-model\scenarios_2030\results_import_only_changed_availability\summary_is_2030.csv

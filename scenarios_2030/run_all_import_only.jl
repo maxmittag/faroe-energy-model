@@ -19,13 +19,13 @@ todo = isempty(ARGS) ? ORDER : ARGS
 for k in todo
     haskey(SETS, k) || error("unknown set $k, choose from $(join(ORDER, ", "))")
 end
-mkpath(joinpath(@__DIR__, "results_import_only"))
+const OUTDIR = joinpath(@__DIR__, get(ENV, "SPIKE_OUTDIR", "results_import_only")); mkpath(OUTDIR)
 for k in todo
     tag, dc, input, km = SETS[k]
     env = copy(ENV)
     env["SPIKE_NO_EXPORT"] = "1"; env["SPIKE_TAG"] = tag; env["SPIKE_DEMAND_CASE"] = dc
     env["SPIKE_INPUT"] = input; env["SPIKE_CABLE_KM"] = km
-    logfile = joinpath(@__DIR__, "results_import_only", "log_$(tag)_$(dc).txt")
+    logfile = joinpath(OUTDIR, "log_$(tag)_$(dc).txt")
     println("running $k (SPIKE_TAG=$tag SPIKE_DEMAND_CASE=$dc SPIKE_INPUT=$input SPIKE_CABLE_KM=$km), log: $logfile")
     flush(stdout)
     t0 = time()
