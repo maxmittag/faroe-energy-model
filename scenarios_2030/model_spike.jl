@@ -15,6 +15,11 @@ using DataFrames, CSV
 
 data_path = joinpath(@__DIR__, "data")
 time_series = CSV.read(joinpath(data_path, get(ENV, "SPIKE_INPUT", "input_hourly.csv")), DataFrame)
+# read time seriesdata from model v3 also, because there the availability factors where calculated from the actual production data. 
+#--> We use this availability for the existing wind and pv capacity in the model.
+# To showcase the difference in new production assets (higher hub height etc.)
+v3_data_path = joinpath(dirname(@__DIR__), "model_v3", "data")   # faroe-energy-model/model_v3/data
+time_series_model_v3 = CSV.read(joinpath(v3_data_path, "input_hourly.csv"), DataFrame)
 tech_data = CSV.read(joinpath(data_path, "technologies.csv"), DataFrame)
 tech_data.technology = String.(tech_data.technology)
 
@@ -70,6 +75,9 @@ NO_EXPORT = get(ENV, "SPIKE_NO_EXPORT", "0") == "1"   # scenarios_2030: import o
 
 demand = time_series[:, :demand] |> Vector                     # d_t, MW
 availability = Dict("wind" => time_series[:, :ava_wind], "pv" => time_series[:, :ava_pv])
+# Old availability factors from modelv3 only for existing capacity.
+availability_old = Dict("wind" => time_series_model_v3[:, :ava_wind], "pv" => time_series_model_v3[:, :ava_pv])
+
 bio = time_series[:, :biogas] |> Vector                        # bio_t (new), fixed injection
 inflow = time_series[:, :hydro_inflow] |> Vector               # inflow_t (new), MWh per hour
 pi_IS = time_series[:, :pi] |> Vector                          # pi_t (new), Elma price, EUR/MWh
@@ -117,8 +125,11 @@ function solve_model(ntc; endo = false, cap = 1000.0)
     )
 
     # G_res,t = ava_res,t * (g_max_res + CAP_G_res) (reader 7.2), before curtailment
+    # --> changed to use the availability from model v3 for the existing capacity (SEV data), 
+    # and the availability from the current model for the new capacity (Copernicus 35 data).
+    # G_res,t = ava_res_old,t * g_max_res + ava_res,t * CAP_G_res
     @expression(m, feed_in[ndisp = NONDISP, t = T],
-        availability[ndisp][t] * (g_max[ndisp] + CAP_G[ndisp])
+        availability_old[ndisp][t] * g_max[ndisp] + availability[ndisp][t] * CAP_G[ndisp]
     )
 
     # energy balance per zone (reader 6.4): generation - charging - curtailment + import - export = d_t

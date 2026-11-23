@@ -14,7 +14,7 @@ import pathlib
 import pandas as pd
 
 HERE = pathlib.Path(__file__).parent
-RES = HERE / "results_import_only"
+RES = HERE / __import__("os").environ.get("SPIKE_OUTDIR", "results_import_only")
 ARC = HERE / "_archive_with_export"
 
 ORDER = ["base_no_cable", "is_fixed_25", "is_fixed_50", "is_fixed_100", "is_variable_cap1000",
